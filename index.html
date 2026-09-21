@@ -38,104 +38,82 @@
 </script>
 
 <style>
-  /* ====== الأدوات الأساسية (بديل @apply) ====== */
   .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    border-radius: 1rem;
-    padding: 0.625rem 1rem;
-    font-size: 0.875rem;
-    font-weight: 800;
-    transition: all 0.2s ease;
-    outline: none;
-    user-select: none;
-    cursor: pointer;
-    border: none;
-    font-family: inherit;
-    line-height: 1;
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 0.5rem; border-radius: 1rem; padding: 0.625rem 1rem;
+    font-size: 0.875rem; font-weight: 800; transition: all 0.2s ease;
+    outline: none; user-select: none; cursor: pointer; border: none;
+    font-family: inherit; line-height: 1;
   }
   .btn:disabled { opacity: 0.5; cursor: not-allowed; }
   .btn:focus { outline: none; }
 
-  .btn-green {
-    background-color: #009246;
-    color: #fff;
-    box-shadow: 0 10px 15px -3px rgba(0,146,70,.25), 0 4px 6px -4px rgba(0,146,70,.25);
-  }
+  .btn-green { background-color: #009246; color: #fff; box-shadow: 0 10px 15px -3px rgba(0,146,70,.25), 0 4px 6px -4px rgba(0,146,70,.25); }
   .btn-green:hover { background-color: #007a3a; }
   .btn-green:active { transform: scale(0.98); }
 
-  .btn-red {
-    background-color: #CE2B37;
-    color: #fff;
-    box-shadow: 0 10px 15px -3px rgba(206,43,55,.25), 0 4px 6px -4px rgba(206,43,55,.25);
-  }
+  .btn-red { background-color: #CE2B37; color: #fff; box-shadow: 0 10px 15px -3px rgba(206,43,55,.25), 0 4px 6px -4px rgba(206,43,55,.25); }
   .btn-red:hover { background-color: #a8222c; }
   .btn-red:active { transform: scale(0.98); }
 
-  .btn-white {
-    background-color: #fff;
-    color: #1e293b;
-    border: 2px solid #e2e8f0;
-  }
-  .btn-white:hover {
-    border-color: #cbd5e1;
-    background-color: #f8fafc;
-  }
+  .btn-blue { background-color: #2563eb; color: #fff; box-shadow: 0 10px 15px -3px rgba(37,99,235,.25), 0 4px 6px -4px rgba(37,99,235,.25); }
+  .btn-blue:hover { background-color: #1d4ed8; }
+  .btn-blue:active { transform: scale(0.98); }
+
+  .btn-purple { background-color: #7c3aed; color: #fff; box-shadow: 0 10px 15px -3px rgba(124,58,237,.25), 0 4px 6px -4px rgba(124,58,237,.25); }
+  .btn-purple:hover { background-color: #6d28d9; }
+  .btn-purple:active { transform: scale(0.98); }
+
+  .btn-teal { background-color: #0d9488; color: #fff; box-shadow: 0 10px 15px -3px rgba(13,148,136,.25), 0 4px 6px -4px rgba(13,148,136,.25); }
+  .btn-teal:hover { background-color: #0f766e; }
+  .btn-teal:active { transform: scale(0.98); }
+
+  .btn-white { background-color: #fff; color: #1e293b; border: 2px solid #e2e8f0; }
+  .btn-white:hover { border-color: #cbd5e1; background-color: #f8fafc; }
 
   .input {
-    width: 100%;
-    border-radius: 1rem;
-    border: 2px solid #e2e8f0;
-    background-color: #fff;
-    padding: 0.75rem 1rem;
-    font-size: 0.875rem;
-    color: #1e293b;
-    outline: none;
-    transition: all 0.2s ease;
-    font-family: inherit;
+    width: 100%; border-radius: 1rem; border: 2px solid #e2e8f0;
+    background-color: #fff; padding: 0.75rem 1rem; font-size: 0.875rem;
+    color: #1e293b; outline: none; transition: all 0.2s ease; font-family: inherit;
   }
   .input::placeholder { color: #94a3b8; }
-  .input:focus {
-    border-color: #009246;
-    box-shadow: 0 0 0 4px rgba(0,146,70,.1);
-  }
+  .input:focus { border-color: #009246; box-shadow: 0 0 0 4px rgba(0,146,70,.1); }
 
-  .label {
-    display: block;
-    margin-bottom: 0.375rem;
-    font-size: 13px;
-    font-weight: 800;
-    color: #334155;
-  }
+  .label { display: block; margin-bottom: 0.375rem; font-size: 13px; font-weight: 800; color: #334155; }
 
   .card {
-    border-radius: 1.5rem;
-    background-color: #fff;
+    border-radius: 1.5rem; background-color: #fff;
     border: 1px solid #f1f5f9;
     box-shadow: 0 1px 2px rgba(16,24,40,.04), 0 8px 24px -8px rgba(16,24,40,.12);
   }
 
   .th {
-    padding: 0.75rem 1rem;
-    text-align: right;
-    font-size: 12px;
-    font-weight: 800;
-    color: #64748b;
-    text-transform: uppercase;
-    white-space: nowrap;
-    background-color: rgba(248,250,252,.8);
+    padding: 0.75rem 1rem; text-align: right; font-size: 12px;
+    font-weight: 800; color: #64748b; text-transform: uppercase;
+    white-space: nowrap; background-color: rgba(248,250,252,.8);
   }
 
   .td {
-    padding: 0.75rem 1rem;
-    font-size: 0.875rem;
-    color: #334155;
-    white-space: nowrap;
-    border-top: 1px solid #f1f5f9;
+    padding: 0.75rem 1rem; font-size: 0.875rem; color: #334155;
+    white-space: nowrap; border-top: 1px solid #f1f5f9;
   }
+
+  /* حقول الامتحان الكبيرة */
+  .exam-input {
+    width: 100%; border-radius: 1rem; padding: 1.5rem 1.25rem;
+    font-size: 2.5rem; font-weight: 900; text-align: center;
+    outline: none; transition: all 0.2s ease; font-family: inherit;
+    line-height: 1; border: 3px solid #e2e8f0; background-color: #f8fafc;
+  }
+  .exam-input::placeholder { color: #cbd5e1; font-size: 1.5rem; font-weight: 800; }
+  .exam-input-total { border-color: #99f6e4; background-color: #f0fdfa; color: #115e59; }
+  .exam-input-total:focus { border-color: #0d9488; box-shadow: 0 0 0 5px rgba(13,148,136,.12); }
+  .exam-input-score { border-color: #fecdd3; background-color: #fff1f2; color: #a8222c; }
+  .exam-input-score:focus { border-color: #CE2B37; box-shadow: 0 0 0 5px rgba(206,43,55,.12); }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type="number"] { -moz-appearance: textfield; }
 </style>
 
 <style>
@@ -188,7 +166,6 @@
     </div>
   </div>
 
-  <!-- شريط الحالة -->
   <div class="w-full border-t border-slate-100 bg-slate-50/80">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 h-10 flex items-center justify-between gap-3 text-[12px] font-bold">
       <div class="flex items-center gap-2">
@@ -213,8 +190,7 @@
       <p class="text-slate-500 font-semibold mt-2 text-sm sm:text-base">اختر العملية التي تريد القيام بها</p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-5">
-      <!-- Excel -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
       <button id="btnExcel" class="card p-6 text-right hover:shadow-big hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
         <div class="absolute top-0 right-0 h-full w-1.5 bg-ita-green"></div>
         <div class="flex items-start justify-between gap-3">
@@ -227,7 +203,6 @@
         </p>
       </button>
 
-      <!-- تسجيل حصة -->
       <button id="btnSession" class="card p-6 text-right hover:shadow-big hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
         <div class="absolute top-0 right-0 h-full w-1.5 bg-ita-red"></div>
         <div class="flex items-start justify-between gap-3">
@@ -236,33 +211,95 @@
         </div>
         <h3 class="mt-4 text-lg font-black text-slate-900">تسجيل حصة</h3>
         <p class="mt-1.5 text-[13px] text-slate-500 font-semibold leading-relaxed">
-          اختار الطالب، حدّد <b class="text-ita-red">حضر/غاب</b>، اكتب <b class="text-ita-red">الشيت</b>، والتاريخ.
+          حضر/غاب، <b class="text-ita-red">عمل الواجب</b>، الشيت، والتاريخ + وقت تلقائي.
         </p>
       </button>
 
-      <!-- حذف البيانات -->
+      <button id="btnExam" class="card p-6 text-right hover:shadow-big hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
+        <div class="absolute top-0 right-0 h-full w-1.5 bg-teal-600"></div>
+        <div class="flex items-start justify-between gap-3">
+          <div class="w-14 h-14 rounded-3xl bg-teal-50 text-teal-600 grid place-items-center text-2xl">🏆</div>
+          <span class="bg-teal-50 text-teal-600 rounded-full px-2.5 py-1 text-[10px] font-black">3</span>
+        </div>
+        <h3 class="mt-4 text-lg font-black text-slate-900">الامتحان</h3>
+        <p class="mt-1.5 text-[13px] text-slate-500 font-semibold leading-relaxed">
+          بحث عن الطالب → من كام → جاب كام → حفظ.
+        </p>
+      </button>
+
+      <button id="btnStudents" class="card p-6 text-right hover:shadow-big hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
+        <div class="absolute top-0 right-0 h-full w-1.5 bg-blue-600"></div>
+        <div class="flex items-start justify-between gap-3">
+          <div class="w-14 h-14 rounded-3xl bg-blue-50 text-blue-600 grid place-items-center text-2xl">📋</div>
+          <span class="bg-blue-50 text-blue-600 rounded-full px-2.5 py-1 text-[10px] font-black">4</span>
+        </div>
+        <h3 class="mt-4 text-lg font-black text-slate-900">بيانات الطلاب</h3>
+        <p class="mt-1.5 text-[13px] text-slate-500 font-semibold leading-relaxed">
+          كل المجموعات باليوم والساعة والمرحلة — اضغط الطالب تشوف بياناته.
+        </p>
+      </button>
+
+      <button id="btnBehavior" class="card p-6 text-right hover:shadow-big hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
+        <div class="absolute top-0 right-0 h-full w-1.5 bg-purple-600"></div>
+        <div class="flex items-start justify-between gap-3">
+          <div class="w-14 h-14 rounded-3xl bg-purple-50 text-purple-600 grid place-items-center text-2xl">🎭</div>
+          <span class="bg-purple-50 text-purple-600 rounded-full px-2.5 py-1 text-[10px] font-black">5</span>
+        </div>
+        <h3 class="mt-4 text-lg font-black text-slate-900">السلوك</h3>
+        <p class="mt-1.5 text-[13px] text-slate-500 font-semibold leading-relaxed">
+          شاشة كاملة لكل المجموعات — سجّل سلوكيات الطلاب.
+        </p>
+      </button>
+
+      <button id="btnRecords" class="card p-6 text-right hover:shadow-big hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
+        <div class="absolute top-0 right-0 h-full w-1.5 bg-amber-500"></div>
+        <div class="flex items-start justify-between gap-3">
+          <div class="w-14 h-14 rounded-3xl bg-amber-50 text-amber-600 grid place-items-center text-2xl">📊</div>
+          <span class="bg-amber-50 text-amber-600 rounded-full px-2.5 py-1 text-[10px] font-black">6</span>
+        </div>
+        <h3 class="mt-4 text-lg font-black text-slate-900">كل الحصص</h3>
+        <p class="mt-1.5 text-[13px] text-slate-500 font-semibold leading-relaxed">
+          كل الحصص المسجّلة — فلترة بالشهر والطالب.
+        </p>
+      </button>
+
+      <button id="btnExamsList" class="card p-6 text-right hover:shadow-big hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
+        <div class="absolute top-0 right-0 h-full w-1.5 bg-teal-700"></div>
+        <div class="flex items-start justify-between gap-3">
+          <div class="w-14 h-14 rounded-3xl bg-teal-50 text-teal-700 grid place-items-center text-2xl">🏅</div>
+          <span class="bg-teal-50 text-teal-700 rounded-full px-2.5 py-1 text-[10px] font-black">7</span>
+        </div>
+        <h3 class="mt-4 text-lg font-black text-slate-900">كل الامتحانات</h3>
+        <p class="mt-1.5 text-[13px] text-slate-500 font-semibold leading-relaxed">
+          كل درجات الامتحانات المسجّلة لكل الطلاب.
+        </p>
+      </button>
+
       <button id="btnDelete" class="card p-6 text-right hover:shadow-big hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
         <div class="absolute top-0 right-0 h-full w-1.5 bg-slate-700"></div>
         <div class="flex items-start justify-between gap-3">
           <div class="w-14 h-14 rounded-3xl bg-slate-100 text-slate-700 grid place-items-center text-2xl">🗑️</div>
-          <span class="bg-slate-100 text-slate-600 rounded-full px-2.5 py-1 text-[10px] font-black">3</span>
+          <span class="bg-slate-100 text-slate-600 rounded-full px-2.5 py-1 text-[10px] font-black">8</span>
         </div>
         <h3 class="mt-4 text-lg font-black text-slate-900">حذف البيانات</h3>
         <p class="mt-1.5 text-[13px] text-slate-500 font-semibold leading-relaxed">
-          امسح <b>الطلاب</b> أو <b>الحصص</b> أو <b>الكل</b>، أو امسح بالشهر.
+          امسح <b>الطلاب</b> أو <b>الحصص</b> أو <b>السلوكيات</b> أو <b>الامتحانات</b>.
         </p>
       </button>
     </div>
 
-    <!-- ملخص سريع -->
-    <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
+    <div class="mt-6 grid grid-cols-2 sm:grid-cols-5 gap-3">
       <div class="card p-4">
         <p class="text-[11px] font-black text-slate-400 uppercase">الطلاب</p>
         <p id="miniStudents" class="text-2xl font-black text-slate-900 mt-1">0</p>
       </div>
       <div class="card p-4">
-        <p class="text-[11px] font-black text-slate-400 uppercase">إجمالي الحصص</p>
+        <p class="text-[11px] font-black text-slate-400 uppercase">الحصص</p>
         <p id="miniSessions" class="text-2xl font-black text-slate-900 mt-1">0</p>
+      </div>
+      <div class="card p-4">
+        <p class="text-[11px] font-black text-slate-400 uppercase">الامتحانات</p>
+        <p id="miniExams" class="text-2xl font-black text-teal-700 mt-1">0</p>
       </div>
       <div class="card p-4">
         <p class="text-[11px] font-black text-slate-400 uppercase">حصص الشهر</p>
@@ -288,7 +325,6 @@
         </div>
       </div>
 
-      <!-- تنبيه الإرشادات -->
       <div class="rounded-2xl border-2 border-amber-200 bg-amber-50 p-4 mb-5">
         <div class="flex items-start gap-3">
           <span class="text-2xl">💡</span>
@@ -297,6 +333,8 @@
             <p class="text-[12px] text-amber-800 font-semibold mt-1 leading-relaxed">
               لازم الملف يكون فيه <b>4 أعمدة بالترتيب</b>:
               اسم الطالب، اليوم والساعة، المرحلة (إعدادي/ثانوي)، الكود.
+              <br>
+              <b class="text-amber-900">🔑 صيغة الكود: ITA + 4 أرقام عشوائية (مثال: ITA4287) — يقبل ITA أو ita أو Ita</b>
             </p>
             <button id="showPromptBtn" class="btn btn-white !py-2 !px-3 mt-3 text-[12px] !border-amber-300">
               📋 عرض نص جاهز لطلبه من ChatGPT/Claude
@@ -305,7 +343,6 @@
         </div>
       </div>
 
-      <!-- منطقة الرفع -->
       <label id="dropArea" class="block border-2 border-dashed border-slate-300 rounded-3xl p-10 text-center cursor-pointer hover:border-ita-green hover:bg-ita-greenLight/30 transition">
         <input id="excelInput" type="file" accept=".xlsx,.xls,.csv" class="hidden">
         <div class="w-16 h-16 mx-auto rounded-3xl bg-ita-greenLight text-ita-green grid place-items-center text-3xl mb-4">📄</div>
@@ -313,7 +350,6 @@
         <p class="text-[12px] text-slate-500 font-semibold mt-1">.xlsx · .xls · .csv</p>
       </label>
 
-      <!-- معاينة -->
       <div id="previewBox" class="hidden mt-6">
         <div class="flex items-center justify-between mb-3">
           <h3 class="font-black text-slate-900">معاينة البيانات</h3>
@@ -354,7 +390,6 @@
     <div class="grid lg:grid-cols-5 gap-5">
       <div class="lg:col-span-3 space-y-5">
 
-        <!-- اختيار الطالب -->
         <div class="card p-6">
           <h2 class="font-black text-slate-900 mb-4 flex items-center gap-2">
             <span class="w-8 h-8 rounded-xl bg-ita-greenLight text-ita-green grid place-items-center text-sm font-black">1</span>
@@ -384,14 +419,12 @@
           </div>
         </div>
 
-        <!-- تفاصيل الحصة -->
         <div class="card p-6">
           <h2 class="font-black text-slate-900 mb-4 flex items-center gap-2">
             <span class="w-8 h-8 rounded-xl bg-ita-redLight text-ita-red grid place-items-center text-sm font-black">2</span>
             تفاصيل الحصة
           </h2>
 
-          <!-- الحضور -->
           <div class="mb-5">
             <label class="label">حالة الحضور</label>
             <div class="grid grid-cols-2 gap-3">
@@ -406,9 +439,39 @@
             </div>
           </div>
 
-          <!-- الشيت -->
           <div class="mb-5">
-            <label class="label" for="sheetInput">الشيت (المبلغ بالجنيه) — المدرس بيحدده براحته</label>
+            <label class="label">📚 حالة الواجب</label>
+            <div class="grid grid-cols-2 gap-3">
+              <button type="button" data-hw="done" class="hw-btn rounded-2xl border-2 border-slate-200 bg-white p-4 text-center transition">
+                <span class="block text-2xl mb-1">📗</span>
+                <span class="block font-black text-sm text-slate-700">عمل الواجب</span>
+              </button>
+              <button type="button" data-hw="not_done" class="hw-btn rounded-2xl border-2 border-slate-200 bg-white p-4 text-center transition">
+                <span class="block text-2xl mb-1">📕</span>
+                <span class="block font-black text-sm text-slate-700">ما عملش الواجب</span>
+              </button>
+            </div>
+
+            <div id="hwReasonBox" class="hidden mt-3 rounded-2xl border-2 border-rose-200 bg-rose-50/60 p-4">
+              <label class="label !text-rose-800" for="hwReasonInput">سبب عدم عمل الواجب</label>
+              <select id="hwReasonInput" class="input !border-rose-200 focus:!border-rose-500 focus:!ring-rose-500/10">
+                <option value="">— اختر السبب —</option>
+                <option value="نسيت أعمل الواجب">1) نسيت أعمل الواجب</option>
+                <option value="مش فاهم الدرس">2) مش فاهم الدرس</option>
+                <option value="مكنش عندي وقت">3) مكنش عندي وقت</option>
+                <option value="كنت تعبان">4) كنت تعبان</option>
+                <option value="نسيت الكراسة في البيت">5) نسيت الكراسة في البيت</option>
+                <option value="مش فاهم المطلوب">6) مش فاهم المطلوب</option>
+                <option value="كنت في درس تاني">7) كنت في درس تاني</option>
+                <option value="مش عندي كتاب">8) مش عندي كتاب</option>
+                <option value="كنت مشغول في المدرسة">9) كنت مشغول في المدرسة</option>
+                <option value="حليت بس نسيت الكراسة">10) حليت بس نسيت الكراسة</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <label class="label" for="sheetInput">الشيت (المبلغ بالجنيه)</label>
             <input id="sheetInput" type="number" min="0" step="5" class="input text-lg font-black" placeholder="0" value="0">
             <div class="flex flex-wrap gap-2 mt-2">
               <button type="button" class="sheet-chip btn btn-white !py-1.5 !px-4 text-[12px]" data-sheet="0">لم يدفع</button>
@@ -421,15 +484,16 @@
             </div>
           </div>
 
-          <!-- التاريخ -->
           <div>
             <label class="label" for="dateInput">تاريخ الحصة</label>
             <input id="dateInput" type="date" class="input">
+            <p class="text-[11px] text-slate-500 font-semibold mt-1.5">
+              ⏰ وقت التسجيل هيتم إضافته تلقائيًا (الساعة الحالية).
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- الملخص -->
       <div class="lg:col-span-2">
         <div class="card p-6 lg:sticky lg:top-32">
           <h2 class="font-black text-slate-900 mb-4">ملخص التسجيل</h2>
@@ -444,18 +508,236 @@
               <span id="sumAtt" class="font-black text-slate-900">—</span>
             </div>
             <div class="flex items-center justify-between gap-2 pb-3 border-b border-slate-100">
+              <span class="text-slate-500 font-bold">الواجب</span>
+              <span id="sumHw" class="font-black text-slate-900">—</span>
+            </div>
+            <div class="flex items-center justify-between gap-2 pb-3 border-b border-slate-100">
               <span class="text-slate-500 font-bold">الشيت</span>
               <span id="sumSheet" class="font-black text-ita-green">—</span>
             </div>
-            <div class="flex items-center justify-between gap-2">
+            <div class="flex items-center justify-between gap-2 pb-3 border-b border-slate-100">
               <span class="text-slate-500 font-bold">التاريخ</span>
               <span id="sumDate" class="font-black text-slate-900">—</span>
+            </div>
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-slate-500 font-bold">⏰ وقت التسجيل</span>
+              <span id="sumTime" class="font-black text-blue-600 font-mono">—</span>
             </div>
           </div>
 
           <button id="saveBtn" class="btn btn-green w-full py-4 mt-6 text-base">💾 حفظ الحصة</button>
           <button id="resetBtn" class="btn btn-white w-full mt-2">↺ تفريغ النموذج</button>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ الامتحان (بسيط جدًا) ============ -->
+  <section id="viewExam" class="hidden anim-fade">
+    <button class="btn btn-white mb-5" data-back>← رجوع</button>
+
+    <div class="max-w-2xl mx-auto">
+
+      <div class="card p-6 sm:p-7 mb-4">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-12 h-12 rounded-2xl bg-teal-50 text-teal-600 grid place-items-center text-2xl">🏆</div>
+          <div>
+            <h2 class="text-xl font-black text-slate-900">تسجيل امتحان</h2>
+            <p class="text-[12px] text-slate-500 font-semibold">ابحث عن الطالب — اكتب الدرجة — احفظ</p>
+          </div>
+        </div>
+
+        <!-- 1) بحث -->
+        <label class="label text-base">1️⃣ ابحث عن الطالب</label>
+        <div class="relative">
+          <input id="examSearch" class="input pr-11 !py-4 !text-base" placeholder="اكتب الاسم أو الكود..." autocomplete="off">
+          <span class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-lg">🔍</span>
+          <div id="examDropdown" class="hidden absolute z-30 mt-2 w-full max-h-72 overflow-y-auto rounded-2xl bg-white border border-slate-200 shadow-2xl anim-slide"></div>
+        </div>
+      </div>
+
+      <!-- بطاقة الطالب + الحقول (تظهر بعد الاختيار) -->
+      <div id="examPickedCard" class="hidden">
+
+        <!-- بطاقة الطالب -->
+        <div class="card p-5 mb-4 border-2 border-teal-200">
+          <div class="flex items-center gap-4">
+            <div id="exAvatar" class="w-14 h-14 rounded-2xl bg-teal-600 text-white grid place-items-center font-black text-xl shadow-lg shadow-teal-600/25 shrink-0"></div>
+            <div class="min-w-0 flex-1">
+              <p id="exName" class="font-black text-slate-900 text-lg truncate"></p>
+              <p class="text-[13px] text-slate-600 font-bold">
+                الكود: <span id="exCode" class="font-mono bg-slate-100 px-1.5 py-0.5 rounded"></span>
+              </p>
+            </div>
+            <button id="examClearPick" class="w-9 h-9 rounded-xl hover:bg-red-50 text-slate-400 hover:text-ita-red transition grid place-items-center text-lg shrink-0">✕</button>
+          </div>
+
+          <div class="mt-4 rounded-xl bg-teal-50 border-2 border-teal-100 px-4 py-3">
+            <p class="text-[11px] font-black text-teal-700 uppercase">📅 المجموعة (تلقائي)</p>
+            <p id="exGroup" class="font-black text-slate-900 text-base mt-1">—</p>
+          </div>
+        </div>
+
+        <!-- 2) الدرجة الكلية -->
+        <div class="card p-6 mb-4">
+          <label class="label !text-base !text-teal-800 mb-3">2️⃣ الدرجة الكلية (من كام؟)</label>
+          <input id="examTotal" type="number" min="0" step="0.5" inputmode="decimal"
+            class="exam-input exam-input-total" placeholder="من كام" value="">
+          <div class="flex flex-wrap gap-2 mt-4 justify-center">
+            <button type="button" class="exam-chip btn btn-white !py-2 !px-4 text-[13px] font-black" data-total="5">من 5</button>
+            <button type="button" class="exam-chip btn btn-white !py-2 !px-4 text-[13px] font-black" data-total="10">من 10</button>
+            <button type="button" class="exam-chip btn btn-white !py-2 !px-4 text-[13px] font-black" data-total="15">من 15</button>
+            <button type="button" class="exam-chip btn btn-white !py-2 !px-4 text-[13px] font-black" data-total="20">من 20</button>
+            <button type="button" class="exam-chip btn btn-white !py-2 !px-4 text-[13px] font-black" data-total="30">من 30</button>
+            <button type="button" class="exam-chip btn btn-white !py-2 !px-4 text-[13px] font-black" data-total="50">من 50</button>
+            <button type="button" class="exam-chip btn btn-white !py-2 !px-4 text-[13px] font-black" data-total="100">من 100</button>
+          </div>
+        </div>
+
+        <!-- 3) درجة الطالب -->
+        <div class="card p-6 mb-4">
+          <label class="label !text-base !text-ita-red mb-3">3️⃣ درجة الطالب (جاب كام؟)</label>
+          <input id="examScore" type="number" min="0" step="0.5" inputmode="decimal"
+            class="exam-input exam-input-score" placeholder="جاب كام" value="">
+        </div>
+
+        <!-- ملخص + حفظ -->
+        <div class="card p-6">
+          <div class="rounded-2xl bg-gradient-to-l from-teal-50 to-white border-2 border-teal-100 p-5 mb-5 text-center">
+            <p class="text-[11px] font-black text-teal-700 uppercase">🎯 النتيجة</p>
+            <p class="text-3xl font-black text-teal-800 mt-2" id="exLiveScore">—</p>
+            <p class="text-sm font-black text-teal-700 mt-1.5" id="exLivePct">—</p>
+          </div>
+
+          <button id="saveExamBtn" class="btn btn-teal w-full py-4 text-base">💾 حفظ الامتحان</button>
+          <button id="resetExamBtn" class="btn btn-white w-full mt-2">↺ تفريغ النموذج</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ بيانات الطلاب ============ -->
+  <section id="viewStudents" class="hidden anim-fade">
+    <button class="btn btn-white mb-5" data-back>← رجوع</button>
+
+    <div class="card p-6 sm:p-8 mb-4">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 grid place-items-center text-2xl">📋</div>
+        <div>
+          <h2 class="text-xl font-black text-slate-900">بيانات الطلاب</h2>
+          <p class="text-[12px] text-slate-500 font-semibold">مجمّعين حسب اليوم والساعة — اضغط على أي طالب لعرض بياناته</p>
+        </div>
+      </div>
+
+      <div class="mt-4 flex flex-wrap gap-2">
+        <input id="studentsSearch" class="input !w-auto flex-1 min-w-[200px]" placeholder="ابحث عن طالب...">
+        <select id="studentsStageFilter" class="input !w-auto font-bold">
+          <option value="">كل المراحل</option>
+          <option value="إعدادي">إعدادي</option>
+          <option value="ثانوي">ثانوي</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="groupsContainer" class="space-y-4"></div>
+  </section>
+
+  <!-- ============ السلوك ============ -->
+  <section id="viewBehavior" class="hidden anim-fade">
+    <button class="btn btn-white mb-5" data-back>← رجوع</button>
+
+    <div class="card p-6 sm:p-8 mb-4">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 grid place-items-center text-2xl">🎭</div>
+        <div>
+          <h2 class="text-xl font-black text-slate-900">لوحة السلوك</h2>
+          <p class="text-[12px] text-slate-500 font-semibold">كل المجموعات وكل الطلاب — اضغط على الطالب لتسجيل سلوكه</p>
+        </div>
+      </div>
+
+      <div class="mt-4 flex flex-wrap gap-2">
+        <input id="behaviorSearch" class="input !w-auto flex-1 min-w-[200px]" placeholder="ابحث عن طالب...">
+        <button id="behaviorTodayBtn" class="btn btn-purple !py-2.5 !px-4 text-[12px]">📅 سلوكيات النهاردة</button>
+      </div>
+    </div>
+
+    <div id="behaviorGroups" class="space-y-4"></div>
+  </section>
+
+  <!-- ============ كل الحصص ============ -->
+  <section id="viewRecords" class="hidden anim-fade">
+    <button class="btn btn-white mb-5" data-back>← رجوع</button>
+
+    <div class="card p-5 mb-4">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+        <div class="flex-1">
+          <h2 class="font-black text-slate-900 text-lg">📊 كل الحصص</h2>
+          <p class="text-[12px] text-slate-500 font-semibold mt-0.5">كل الحصص المسجّلة — الأحدث أولاً</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <input id="recordsSearch" class="input !py-2.5 !w-auto font-bold" placeholder="ابحث باسم الطالب...">
+          <select id="recordsMonthFilter" class="input !py-2.5 !w-auto font-bold">
+            <option value="">كل الشهور</option>
+          </select>
+        </div>
+      </div>
+      <p id="recordsSummary" class="mt-3 text-[12px] font-bold text-slate-500"></p>
+    </div>
+
+    <div class="card overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[800px]">
+          <thead>
+            <tr>
+              <th class="th">التاريخ</th>
+              <th class="th">⏰ الوقت</th>
+              <th class="th">الطالب</th>
+              <th class="th">الحضور</th>
+              <th class="th">الواجب</th>
+              <th class="th">الشيت</th>
+            </tr>
+          </thead>
+          <tbody id="recordsBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ كل الامتحانات ============ -->
+  <section id="viewExamsList" class="hidden anim-fade">
+    <button class="btn btn-white mb-5" data-back>← رجوع</button>
+
+    <div class="card p-5 mb-4">
+      <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+        <div class="flex-1">
+          <h2 class="font-black text-slate-900 text-lg">🏆 كل الامتحانات</h2>
+          <p class="text-[12px] text-slate-500 font-semibold mt-0.5">كل درجات الامتحانات المسجّلة</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <input id="examsSearch" class="input !py-2.5 !w-auto font-bold" placeholder="ابحث باسم الطالب...">
+          <select id="examsMonthFilter" class="input !py-2.5 !w-auto font-bold">
+            <option value="">كل الشهور</option>
+          </select>
+        </div>
+      </div>
+      <p id="examsSummary" class="mt-3 text-[12px] font-bold text-slate-500"></p>
+    </div>
+
+    <div class="card overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="w-full min-w-[800px]">
+          <thead>
+            <tr>
+              <th class="th">التاريخ</th>
+              <th class="th">⏰ الوقت</th>
+              <th class="th">الطالب</th>
+              <th class="th">المجموعة</th>
+              <th class="th">الدرجة</th>
+              <th class="th">النسبة</th>
+            </tr>
+          </thead>
+          <tbody id="examsBody"></tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -473,52 +755,70 @@
         </div>
       </div>
 
-      <!-- إحصائيات -->
-      <div class="grid grid-cols-2 gap-3 mb-6">
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
         <div class="rounded-2xl bg-slate-50 border border-slate-100 p-4 text-center">
-          <p class="text-[11px] font-black text-slate-500 uppercase">إجمالي الطلاب</p>
+          <p class="text-[11px] font-black text-slate-500 uppercase">الطلاب</p>
           <p id="delStatStudents" class="text-3xl font-black text-slate-900 mt-1">0</p>
         </div>
         <div class="rounded-2xl bg-slate-50 border border-slate-100 p-4 text-center">
-          <p class="text-[11px] font-black text-slate-500 uppercase">إجمالي الحصص</p>
+          <p class="text-[11px] font-black text-slate-500 uppercase">الحصص</p>
           <p id="delStatSessions" class="text-3xl font-black text-slate-900 mt-1">0</p>
+        </div>
+        <div class="rounded-2xl bg-slate-50 border border-slate-100 p-4 text-center">
+          <p class="text-[11px] font-black text-slate-500 uppercase">السلوكيات</p>
+          <p id="delStatBehavior" class="text-3xl font-black text-slate-900 mt-1">0</p>
+        </div>
+        <div class="rounded-2xl bg-slate-50 border border-slate-100 p-4 text-center">
+          <p class="text-[11px] font-black text-slate-500 uppercase">الامتحانات</p>
+          <p id="delStatExams" class="text-3xl font-black text-teal-700 mt-1">0</p>
         </div>
       </div>
 
       <div class="space-y-3">
-        <!-- حذف الطلاب -->
         <div class="rounded-2xl border-2 border-red-100 bg-red-50/40 p-4 flex flex-col sm:flex-row sm:items-center gap-3">
           <div class="flex-1">
             <p class="font-black text-slate-900">🗑️ حذف جميع الطلاب</p>
-            <p class="text-[12px] text-slate-500 font-semibold mt-0.5">يمسح كل الطلاب من قاعدة البيانات (بدون الحصص المسجلة).</p>
+            <p class="text-[12px] text-slate-500 font-semibold mt-0.5">يمسح كل الطلاب (بدون الحصص).</p>
           </div>
           <button data-del="students" class="btn btn-red !py-2.5 text-sm">حذف الطلاب</button>
         </div>
 
-        <!-- حذف الحصص -->
         <div class="rounded-2xl border-2 border-red-100 bg-red-50/40 p-4 flex flex-col sm:flex-row sm:items-center gap-3">
           <div class="flex-1">
             <p class="font-black text-slate-900">🗑️ حذف جميع الحصص</p>
-            <p class="text-[12px] text-slate-500 font-semibold mt-0.5">يمسح كل سجلات الحضور والشيت لكل الطلاب.</p>
+            <p class="text-[12px] text-slate-500 font-semibold mt-0.5">يمسح كل سجلات الحضور والواجب والشيت.</p>
           </div>
           <button data-del="sessions" class="btn btn-red !py-2.5 text-sm">حذف الحصص</button>
         </div>
 
-        <!-- حذف بالشهر -->
+        <div class="rounded-2xl border-2 border-purple-100 bg-purple-50/40 p-4 flex flex-col sm:flex-row sm:items-center gap-3">
+          <div class="flex-1">
+            <p class="font-black text-slate-900">🗑️ حذف جميع السلوكيات</p>
+            <p class="text-[12px] text-slate-500 font-semibold mt-0.5">يمسح كل سجلات السلوك.</p>
+          </div>
+          <button data-del="behavior" class="btn btn-red !py-2.5 text-sm">حذف السلوكيات</button>
+        </div>
+
+        <div class="rounded-2xl border-2 border-teal-100 bg-teal-50/40 p-4 flex flex-col sm:flex-row sm:items-center gap-3">
+          <div class="flex-1">
+            <p class="font-black text-slate-900">🗑️ حذف جميع الامتحانات</p>
+            <p class="text-[12px] text-slate-500 font-semibold mt-0.5">يمسح كل درجات الامتحانات.</p>
+          </div>
+          <button data-del="exams" class="btn btn-red !py-2.5 text-sm">حذف الامتحانات</button>
+        </div>
+
         <div class="rounded-2xl border-2 border-amber-100 bg-amber-50/40 p-4">
           <p class="font-black text-slate-900 mb-3">📅 حذف حصص شهر معين</p>
           <div class="flex flex-col sm:flex-row gap-3">
             <input id="delMonth" type="month" class="input flex-1">
             <button data-del="month" class="btn btn-red !py-2.5 text-sm">حذف حصص الشهر</button>
           </div>
-          <p class="text-[11px] text-slate-500 font-semibold mt-2">هيمسح كل حصص الشهر المختار لكل الطلاب.</p>
         </div>
 
-        <!-- حذف الكل -->
         <div class="rounded-2xl border-2 border-red-200 bg-red-100/50 p-4 flex flex-col sm:flex-row sm:items-center gap-3">
           <div class="flex-1">
             <p class="font-black text-ita-red">⚠️ حذف كل شيء</p>
-            <p class="text-[12px] text-slate-600 font-semibold mt-0.5">يمسح كل الطلاب <b>و</b> كل الحصص نهائيًا. لا يمكن الرجوع.</p>
+            <p class="text-[12px] text-slate-600 font-semibold mt-0.5">يمسح الطلاب + الحصص + السلوكيات + الامتحانات.</p>
           </div>
           <button data-del="all" class="btn btn-red !py-2.5 text-sm">حذف الكل</button>
         </div>
@@ -528,7 +828,6 @@
 
 </main>
 
-<!-- ============ الفوتر ============ -->
 <footer class="fixed bottom-0 inset-x-0 z-40 border-t border-slate-200 bg-white/95 backdrop-blur-lg" style="padding-bottom:env(safe-area-inset-bottom)">
   <div class="h-1 flag-strip"></div>
   <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-center gap-3 relative">
@@ -542,20 +841,18 @@
   </div>
 </footer>
 
-<!-- حاويات -->
 <div id="toastHost" class="fixed top-4 left-1/2 -translate-x-1/2 z-[100] flex flex-col items-center gap-2 pointer-events-none w-[calc(100%-2rem)] max-w-sm"></div>
 <div id="modalHost" class="hidden fixed inset-0 z-[90] bg-slate-900/50 backdrop-blur-sm p-4 overflow-y-auto"></div>
 
-<!-- ================= السكربت ================= -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import {
-  getFirestore, collection, doc, addDoc, deleteDoc,
+  getFirestore, collection, doc, addDoc,
   onSnapshot, writeBatch, serverTimestamp, getDocs, query, where
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 /* ==========================================================
-   1) إعدادات Firebase — بيانات مشروعك (italiano-app-24c0c)
+   1) إعدادات Firebase
    ========================================================== */
 const FIREBASE_CONFIG = {
   apiKey:            "AIzaSyCqsn0MNLElkc7T4I08-MGureu6xsauNA",
@@ -568,15 +865,28 @@ const FIREBASE_CONFIG = {
 
 let db = null;
 try {
-  const app = initializeApp(FIREBASE_CONFIG);
-  db = getFirestore(app);
+  db = getFirestore(initializeApp(FIREBASE_CONFIG));
   console.log("✅ تم الاتصال بقاعدة بيانات فايربيز (italiano-app-24c0c)");
-} catch (e) {
-  console.error('[Firebase init]', e);
-}
+} catch (e) { console.error('[Firebase init]', e); }
 
 /* ==========================================================
-   2) أدوات مساعدة
+   2) الثوابت
+   ========================================================== */
+const BEHAVIOR_ISSUES = [
+  { key: 'talking',    label: 'بيكلم زمايله في الحصة',  icon: '💬' },
+  { key: 'phone',      label: 'بيلعب بالموبايل',          icon: '📱' },
+  { key: 'talkback',   label: 'بيرد على المدرس',          icon: '🗣️' },
+  { key: 'sleeping',   label: 'بينام في الحصة',           icon: '😴' },
+  { key: 'noise',      label: 'بيعمل شغب',                icon: '🔊' },
+  { key: 'bullying',   label: 'بيأذي زمايله',             icon: '👊' },
+  { key: 'unfocused',  label: 'مش بيركز خالص',            icon: '💭' },
+  { key: 'joking',     label: 'بيهرج ويضحك',              icon: '😄' },
+  { key: 'eating',     label: 'بياكل في الحصة',           icon: '🍽️' },
+  { key: 'walking',    label: 'بيخرج من غير إذن',          icon: '🚪' }
+];
+
+/* ==========================================================
+   3) أدوات
    ========================================================== */
 const $  = (s, r = document) => r.querySelector(s);
 const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -584,8 +894,12 @@ const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const state = {
   students: [],
   sessions: [],
+  behavior: [],
+  exams: [],
   pickedStudent: null,
   attendance: null,
+  homework: null,
+  examPickedStudent: null,
   previewRows: [],
   currentView: 'viewHome'
 };
@@ -607,6 +921,10 @@ function toast(msg, type='success') {
 const escapeHtml = s => String(s ?? '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m]);
 const formatMoney = n => (Number(n)||0).toLocaleString('en-US') + ' ج.م';
 const todayISO = () => { const d = new Date(); const o = d.getTimezoneOffset(); return new Date(d.getTime()-o*60000).toISOString().slice(0,10); };
+const nowTime = () => {
+  const d = new Date();
+  return String(d.getHours()).padStart(2,'0') + ':' + String(d.getMinutes()).padStart(2,'0');
+};
 const currentMonth = () => todayISO().slice(0,7);
 const formatDate = d => {
   if (!d) return '—';
@@ -617,9 +935,15 @@ const initials = n => {
   const p = String(n||'').trim().split(/\s+/).filter(Boolean);
   return p.length ? (p[0][0]||'') + (p[1]?p[1][0]:'') : '؟';
 };
+const normalizeCode = c => String(c ?? '').trim().toUpperCase();
+const fmtNum = n => {
+  const v = Number(n);
+  if (isNaN(v)) return '0';
+  return (v % 1 === 0) ? String(v) : v.toFixed(1);
+};
 
 /* ==========================================================
-   3) نافذة تأكيد
+   4) نافذة تأكيد
    ========================================================== */
 function confirmDialog(title, text, confirmText = 'تأكيد') {
   return new Promise(resolve => {
@@ -645,13 +969,15 @@ function confirmDialog(title, text, confirmText = 'تأكيد') {
 }
 
 /* ==========================================================
-   4) التنقل + زرار الرجوع في الموبايل
+   5) التنقل
    ========================================================== */
+const VIEWS = ['viewHome','viewExcel','viewSession','viewExam','viewStudents','viewBehavior','viewRecords','viewExamsList','viewDelete'];
+
 function showView(id, pushHistory = true) {
   const prev = state.currentView;
   state.currentView = id;
 
-  ['viewHome','viewExcel','viewSession','viewDelete'].forEach(v => {
+  VIEWS.forEach(v => {
     const el = document.getElementById(v);
     if (el) el.classList.toggle('hidden', v !== id);
   });
@@ -663,28 +989,28 @@ function showView(id, pushHistory = true) {
 }
 
 window.addEventListener('popstate', () => {
-  if (state.currentView !== 'viewHome') {
-    showView('viewHome', false);
-  }
+  if (state.currentView !== 'viewHome') showView('viewHome', false);
 });
 
-$('#btnExcel').addEventListener('click',   () => { resetImport(); showView('viewExcel'); });
-$('#btnSession').addEventListener('click', () => { resetSessionForm(); showView('viewSession'); });
-$('#btnDelete').addEventListener('click',  () => { updateDeleteStats(); showView('viewDelete'); });
+$('#btnExcel').addEventListener('click',      () => { resetImport(); showView('viewExcel'); });
+$('#btnSession').addEventListener('click',    () => { resetSessionForm(); showView('viewSession'); });
+$('#btnExam').addEventListener('click',       () => { resetExamForm(); showView('viewExam'); });
+$('#btnStudents').addEventListener('click',   () => { renderGroups(); showView('viewStudents'); });
+$('#btnBehavior').addEventListener('click',   () => { renderBehaviorGroups(); showView('viewBehavior'); });
+$('#btnRecords').addEventListener('click',    () => { renderRecords(); showView('viewRecords'); });
+$('#btnExamsList').addEventListener('click',  () => { renderExamsList(); showView('viewExamsList'); });
+$('#btnDelete').addEventListener('click',     () => { updateDeleteStats(); showView('viewDelete'); });
 
 document.addEventListener('click', e => {
   if (e.target.closest('[data-back]')) {
     resetImport();
-    if (state.currentView !== 'viewHome') {
-      history.back();
-    } else {
-      showView('viewHome', false);
-    }
+    if (state.currentView !== 'viewHome') history.back();
+    else showView('viewHome', false);
   }
 });
 
 /* ==========================================================
-   5) الشريط والحسابات الشهرية
+   6) الحسابات والشريط
    ========================================================== */
 function setConn(ok) {
   const dot = $('#dotConn'), txt = $('#txtConn');
@@ -703,6 +1029,7 @@ function updateCounts() {
   $('#txtCount').textContent = state.students.length;
   $('#miniStudents').textContent = state.students.length;
   $('#miniSessions').textContent = state.sessions.length;
+  $('#miniExams').textContent = state.exams.length;
 
   const cm = currentMonth();
   const monthSessions = state.sessions.filter(s => String(s.date||'').startsWith(cm));
@@ -715,10 +1042,12 @@ function updateCounts() {
 function updateDeleteStats() {
   $('#delStatStudents').textContent = state.students.length;
   $('#delStatSessions').textContent = state.sessions.length;
+  $('#delStatBehavior').textContent = state.behavior.length;
+  $('#delStatExams').textContent = state.exams.length;
 }
 
 /* ==========================================================
-   6) Firebase Listeners
+   7) Firebase Listeners
    ========================================================== */
 function startListeners() {
   if (!db) { setConn(false); toast('لم يتم ضبط Firebase','error'); return; }
@@ -730,21 +1059,43 @@ function startListeners() {
         .sort((a,b)=>String(a.name||'').localeCompare(String(b.name||''),'ar'));
       setConn(true);
       updateCounts();
+      if (state.currentView === 'viewStudents') renderGroups();
+      if (state.currentView === 'viewBehavior') renderBehaviorGroups();
     },
     err => { console.error(err); setConn(false); toast('تعذّر الاتصال بالداتابيز: '+err.message,'error'); }
   );
 
   onSnapshot(collection(db,'sessions'),
     snap => {
-      state.sessions = snap.docs.map(d => ({ id:d.id, ...d.data() }));
+      state.sessions = snap.docs.map(d => ({ id:d.id, ...d.data() }))
+        .sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
       updateCounts();
+      if (state.currentView === 'viewRecords') renderRecords();
+    },
+    err => console.error(err)
+  );
+
+  onSnapshot(collection(db,'behavior'),
+    snap => {
+      state.behavior = snap.docs.map(d => ({ id:d.id, ...d.data() }));
+      updateCounts();
+    },
+    err => console.error(err)
+  );
+
+  onSnapshot(collection(db,'exams'),
+    snap => {
+      state.exams = snap.docs.map(d => ({ id:d.id, ...d.data() }))
+        .sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
+      updateCounts();
+      if (state.currentView === 'viewExamsList') renderExamsList();
     },
     err => console.error(err)
   );
 }
 
 /* ==========================================================
-   7) رفع Excel
+   8) رفع Excel
    ========================================================== */
 const excelInput = $('#excelInput');
 const dropArea = $('#dropArea');
@@ -758,13 +1109,16 @@ const dropArea = $('#dropArea');
 dropArea.addEventListener('drop', e => { const f = e.dataTransfer.files?.[0]; if (f) handleExcelFile(f); });
 excelInput.addEventListener('change', e => { const f = e.target.files?.[0]; if (f) handleExcelFile(f); });
 
-/* زر عرض النص الجاهز */
 $('#showPromptBtn').addEventListener('click', () => {
   const prompt = `أنا مدرس كورس إيطالي وأريد ملف Excel فيه 4 أعمدة بالترتيب:
 1) اسم الطالب
 2) اليوم والساعة (مثال: السبت 5:00 مساءً)
 3) المرحلة (إعدادي أو ثانوي)
-4) الكود السري للطالب (مثال: ITA001)
+4) الكود السري للطالب — بصيغة ITA + 4 أرقام عشوائية (مثال: ITA4287، ITA9513، ITA3056)
+
+⚠️ مهم جدًا: كل كود لازم يكون مختلف عن التاني، وميبدأش بصفر بعد ITA.
+✅ أمثلة صح: ITA4287 · ITA9513 · ITA3056 · ITA7821 (يقبل ITA أو ita أو Ita — كلها هتتوحّد لـ ITA)
+❌ أمثلة غلط: ITA001 · ITA0001 · ITA123 (لازم 4 أرقام بالظبط)
 
 من فضلك أرسل لي قالب Excel جاهز بالعربي بهذه الأعمدة.
 أرسل لي الصفوف كالتالي:
@@ -786,9 +1140,6 @@ $('#showPromptBtn').addEventListener('click', () => {
           <button id="pCopy" class="btn btn-green flex-1">📋 نسخ النص</button>
           <button id="pClose2" class="btn btn-white flex-1">إغلاق</button>
         </div>
-        <p class="text-[11px] text-slate-400 font-bold text-center mt-3">
-          بعد ما تلصق النص، ابعتله صورة كشف الطلاب أو قول له يجهزلك الجدول.
-        </p>
       </div>
     </div>`;
 
@@ -797,10 +1148,8 @@ $('#showPromptBtn').addEventListener('click', () => {
   $('#pClose2').onclick = close;
   host.onclick = e => { if (e.target === host) close(); };
   $('#pCopy').onclick = async () => {
-    try {
-      await navigator.clipboard.writeText(prompt);
-      toast('تم نسخ النص ✅');
-    } catch {
+    try { await navigator.clipboard.writeText(prompt); toast('تم نسخ النص ✅'); }
+    catch {
       const t = $('#promptText');
       const r = document.createRange(); r.selectNode(t);
       window.getSelection().removeAllRanges();
@@ -844,7 +1193,7 @@ function handleExcelFile(file) {
         name:  String(r[cName]  ?? '').trim(),
         time:  String(r[cTime]  ?? '').trim(),
         stage: String(r[cStage] ?? '').trim(),
-        code:  String(r[cCode]  ?? '').trim()
+        code:  normalizeCode(r[cCode] ?? '')
       })).filter(r => r.name);
 
       if (!cleanRows.length) return toast('لم يتم العثور على أسماء صالحة','error');
@@ -896,26 +1245,39 @@ $('#confirmImport').addEventListener('click', async () => {
 
   try {
     const existingByCode = new Map();
-    state.students.forEach(s => { if (s.code) existingByCode.set(String(s.code), s); });
+    state.students.forEach(s => { if (s.code) existingByCode.set(normalizeCode(s.code), s); });
 
     let added = 0, updated = 0;
     const usedCodes = new Set(existingByCode.keys());
-    let seed = state.students.length + 1;
-    const genCode = () => { let c; do { c = 'ITA'+String(seed++).padStart(3,'0'); } while (usedCodes.has(c)); usedCodes.add(c); return c; };
+
+    const genCode = () => {
+      let c;
+      let tries = 0;
+      do {
+        const num = Math.floor(1000 + Math.random() * 9000);
+        c = 'ITA' + num;
+        tries++;
+        if (tries > 5000) { c = 'ITA' + Date.now().toString().slice(-4); break; }
+      } while (usedCodes.has(c));
+      usedCodes.add(c);
+      return c;
+    };
 
     const CHUNK = 400;
     for (let i=0;i<rows.length;i+=CHUNK) {
       const batch = writeBatch(db);
       rows.slice(i,i+CHUNK).forEach(r => {
-        const exist = r.code ? existingByCode.get(r.code) : null;
+        const normCode = normalizeCode(r.code);
+        const exist = normCode ? existingByCode.get(normCode) : null;
         if (exist) {
           batch.update(doc(db,'students',exist.id), {
             name: r.name, time: r.time, stage: r.stage,
-            code: r.code || exist.code, updatedAt: serverTimestamp()
+            code: normCode || exist.code, updatedAt: serverTimestamp()
           });
           updated++;
         } else {
-          const code = r.code || genCode();
+          const code = normCode || genCode();
+          usedCodes.add(code);
           batch.set(doc(collection(db,'students')), {
             name: r.name, time: r.time, stage: r.stage,
             code, createdAt: serverTimestamp()
@@ -953,7 +1315,7 @@ $('#confirmImport').addEventListener('click', async () => {
 });
 
 /* ==========================================================
-   8) تسجيل حصة
+   9) تسجيل حصة
    ========================================================== */
 const pickSearch = $('#pickSearch');
 const pickDropdown = $('#pickDropdown');
@@ -1019,6 +1381,21 @@ function paintAtt() {
   });
 }
 
+$$('.hw-btn').forEach(b => b.addEventListener('click', () => {
+  state.homework = b.dataset.hw;
+  paintHw();
+  $('#hwReasonBox').classList.toggle('hidden', state.homework !== 'not_done');
+  updateSummary();
+}));
+function paintHw() {
+  $$('.hw-btn').forEach(b => {
+    const active = b.dataset.hw === state.homework;
+    const isDone = b.dataset.hw === 'done';
+    const on = isDone ? 'border-ita-green bg-ita-greenLight/60' : 'border-rose-500 bg-rose-50';
+    b.className = `hw-btn rounded-2xl border-2 p-4 text-center transition ${active ? on : 'border-slate-200 bg-white hover:border-slate-300'}`;
+  });
+}
+
 $$('.sheet-chip').forEach(c => c.addEventListener('click', () => {
   $('#sheetInput').value = c.dataset.sheet;
   updateSummary();
@@ -1033,19 +1410,29 @@ function updateSummary() {
   const att = state.attendance === 'present' ? '✅ حضر'
            : state.attendance === 'absent'  ? '❌ غاب' : '—';
   $('#sumAtt').textContent = att;
+
+  const hw = state.homework === 'done'     ? '📗 عمل الواجب'
+           : state.homework === 'not_done' ? '📕 ما عملش' : '—';
+  $('#sumHw').textContent = hw;
+
   const v = Number($('#sheetInput').value) || 0;
   $('#sumSheet').textContent = v > 0 ? formatMoney(v) : 'لم يدفع';
   $('#sumDate').textContent = formatDate($('#dateInput').value);
+  $('#sumTime').textContent = nowTime();
 }
 
 function resetSessionForm() {
   state.pickedStudent = null;
   state.attendance = null;
+  state.homework = null;
   pickSearch.value = '';
   $('#sheetInput').value = '0';
   $('#dateInput').value = todayISO();
+  $('#hwReasonInput').value = '';
+  $('#hwReasonBox').classList.add('hidden');
   $('#pickedCard').classList.add('hidden');
   paintAtt();
+  paintHw();
   updateSummary();
 }
 
@@ -1055,6 +1442,13 @@ $('#saveBtn').addEventListener('click', async () => {
   if (!db) return toast('لم يتم ضبط Firebase','error');
   if (!state.pickedStudent) return toast('اختر الطالب أولاً','error');
   if (!state.attendance) return toast('حدّد حالة الحضور','error');
+  if (!state.homework) return toast('حدّد حالة الواجب','error');
+
+  let hwReason = '';
+  if (state.homework === 'not_done') {
+    hwReason = $('#hwReasonInput').value.trim();
+    if (!hwReason) return toast('اختر سبب عدم عمل الواجب','error');
+  }
 
   const btn = $('#saveBtn');
   btn.disabled = true;
@@ -1062,22 +1456,27 @@ $('#saveBtn').addEventListener('click', async () => {
   btn.textContent = '⏳ جارٍ الحفظ...';
 
   const sheetVal = Number($('#sheetInput').value) || 0;
+  const timeStr = nowTime();
+
   const payload = {
     studentId:    state.pickedStudent.id,
     studentName:  state.pickedStudent.name || '',
-    studentCode:  state.pickedStudent.code || '',
+    studentCode:  normalizeCode(state.pickedStudent.code || ''),
     studentTime:  state.pickedStudent.time || '',
     studentStage: state.pickedStudent.stage || '',
     date:         $('#dateInput').value || todayISO(),
+    time:         timeStr,
     sheet:        sheetVal,
     amount:       sheetVal,
     attendance:   state.attendance,
+    homework:     state.homework,
+    homeworkReason: hwReason,
     createdAt:    serverTimestamp()
   };
 
   try {
     await addDoc(collection(db,'sessions'), payload);
-    toast('تم حفظ الحصة 🎉','success');
+    toast(`تم حفظ الحصة — ${timeStr} 🎉`,'success');
     resetSessionForm();
     setTimeout(() => showView('viewHome'), 500);
   } catch (err) {
@@ -1090,7 +1489,740 @@ $('#saveBtn').addEventListener('click', async () => {
 });
 
 /* ==========================================================
-   9) حذف البيانات
+   10) الامتحان (البسيط)
+   ========================================================== */
+const examSearch = $('#examSearch');
+const examDropdown = $('#examDropdown');
+
+examSearch.addEventListener('input', () => {
+  const t = examSearch.value.trim().toLowerCase();
+  if (!t) { examDropdown.classList.add('hidden'); return; }
+  const matches = state.students.filter(s =>
+    String(s.name||'').toLowerCase().includes(t) ||
+    String(s.code||'').toLowerCase().includes(t)
+  ).slice(0,8);
+
+  if (!matches.length) {
+    examDropdown.innerHTML = `<div class="px-4 py-3 text-sm text-slate-400 text-center">لا يوجد طالب مطابق</div>`;
+  } else {
+    examDropdown.innerHTML = matches.map(s => `
+      <button type="button" data-exam-pick="${s.id}" class="w-full flex items-center gap-3 px-4 py-3 hover:bg-teal-50 transition text-right border-b border-slate-50 last:border-0">
+        <span class="w-10 h-10 rounded-xl bg-teal-50 text-teal-700 grid place-items-center font-black text-sm shrink-0">${escapeHtml(initials(s.name))}</span>
+        <span class="min-w-0 flex-1">
+          <span class="block font-black text-base text-slate-900 truncate">${escapeHtml(s.name)}</span>
+          <span class="block text-[12px] text-slate-500 font-mono">${escapeHtml(s.code||'بدون كود')}</span>
+        </span>
+      </button>`).join('');
+  }
+  examDropdown.classList.remove('hidden');
+});
+
+document.addEventListener('click', e => {
+  const p = e.target.closest('[data-exam-pick]');
+  if (p) {
+    const st = state.students.find(s => s.id === p.dataset.examPick);
+    if (st) {
+      state.examPickedStudent = st;
+      examSearch.value = '';
+      renderExamPicked();
+      examDropdown.classList.add('hidden');
+    }
+    return;
+  }
+  if (!e.target.closest('#examDropdown') && e.target !== examSearch) examDropdown.classList.add('hidden');
+});
+
+function renderExamPicked() {
+  const s = state.examPickedStudent;
+  const card = $('#examPickedCard');
+  if (!s) {
+    card.classList.add('hidden');
+    return;
+  }
+  card.classList.remove('hidden');
+  $('#exAvatar').textContent = initials(s.name);
+  $('#exName').textContent = s.name;
+  $('#exCode').textContent = s.code || '—';
+  $('#exGroup').textContent = [s.time, s.stage].filter(Boolean).join(' · ') || 'بدون مجموعة';
+  updateExamSummary();
+}
+
+$('#examClearPick').addEventListener('click', () => {
+  state.examPickedStudent = null;
+  renderExamPicked();
+});
+
+$$('.exam-chip').forEach(c => c.addEventListener('click', () => {
+  $('#examTotal').value = c.dataset.total;
+  updateExamSummary();
+}));
+
+['examScore','examTotal'].forEach(id => {
+  const el = $('#'+id);
+  if (el) el.addEventListener('input', updateExamSummary);
+});
+
+function updateExamSummary() {
+  const score = Number($('#examScore').value);
+  const total = Number($('#examTotal').value);
+  const hasTotal = !isNaN(total) && total > 0;
+  const hasScore = !isNaN(score) && score >= 0;
+
+  const pct = hasTotal && hasScore ? Math.round((score/total)*1000)/10 : 0;
+  const preview = $('#exLiveScore');
+  const previewPct = $('#exLivePct');
+
+  if (hasTotal && hasScore) {
+    preview.textContent = `${fmtNum(score)} من ${fmtNum(total)}`;
+    let msg = '';
+    if (pct >= 90) msg = '🌟 ممتاز جدًا!';
+    else if (pct >= 75) msg = '👏 جيد جدًا';
+    else if (pct >= 60) msg = '👍 كويس';
+    else if (pct >= 50) msg = '⚠️ مقبول';
+    else msg = '❗ يحتاج تحسين';
+    previewPct.textContent = `${pct}%  ·  ${msg}`;
+  } else {
+    preview.textContent = '—';
+    previewPct.textContent = '—';
+  }
+}
+
+function resetExamForm() {
+  state.examPickedStudent = null;
+  examSearch.value = '';
+  $('#examScore').value = '';
+  $('#examTotal').value = '';
+  $('#examPickedCard').classList.add('hidden');
+  $('#examDropdown').classList.add('hidden');
+  updateExamSummary();
+}
+
+$('#resetExamBtn').addEventListener('click', resetExamForm);
+
+$('#saveExamBtn').addEventListener('click', async () => {
+  if (!db) return toast('لم يتم ضبط Firebase','error');
+  if (!state.examPickedStudent) return toast('اختر الطالب أولاً','error');
+
+  const score = Number($('#examScore').value);
+  const total = Number($('#examTotal').value);
+
+  if (isNaN(total) || total <= 0) return toast('اكتب الدرجة الكلية (من كام)','error');
+  if (isNaN(score) || score < 0) return toast('اكتب درجة الطالب','error');
+  if (score > total) return toast('الدرجة أكبر من الكلية — راجع الأرقام','error');
+
+  const btn = $('#saveExamBtn');
+  btn.disabled = true;
+  const orig = btn.textContent;
+  btn.textContent = '⏳ جارٍ الحفظ...';
+
+  const timeStr = nowTime();
+  const s = state.examPickedStudent;
+
+  const payload = {
+    studentId:    s.id,
+    studentName:  s.name || '',
+    studentCode:  normalizeCode(s.code || ''),
+    studentTime:  s.time || '',
+    studentStage: s.stage || '',
+    group:        s.time || '',
+    score:        score,
+    total:        total,
+    percentage:   Math.round((score/total)*1000)/10,
+    date:         todayISO(),
+    time:         timeStr,
+    createdAt:    serverTimestamp()
+  };
+
+  try {
+    await addDoc(collection(db,'exams'), payload);
+    toast(`تم حفظ الامتحان — ${fmtNum(score)} من ${fmtNum(total)} 🎉`,'success');
+    resetExamForm();
+    setTimeout(() => showView('viewHome'), 600);
+  } catch (err) {
+    console.error(err);
+    toast('فشل الحفظ: '+err.message,'error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = orig;
+  }
+});
+
+/* ==========================================================
+   11) بيانات الطلاب
+   ========================================================== */
+function groupStudents(list) {
+  const map = new Map();
+  list.forEach(s => {
+    const key = (s.time || 'بدون موعد') + '||' + (s.stage || 'بدون مرحلة');
+    if (!map.has(key)) map.set(key, { time: s.time || 'بدون موعد', stage: s.stage || 'بدون مرحلة', students: [] });
+    map.get(key).students.push(s);
+  });
+  return [...map.values()].sort((a,b)=>String(a.time).localeCompare(String(b.time),'ar'));
+}
+
+function renderGroups() {
+  const term = ($('#studentsSearch')?.value || '').trim().toLowerCase();
+  const stageF = $('#studentsStageFilter')?.value || '';
+
+  let list = state.students;
+  if (stageF) list = list.filter(s => (s.stage||'').includes(stageF));
+  if (term) list = list.filter(s => String(s.name||'').toLowerCase().includes(term) || String(s.code||'').toLowerCase().includes(term));
+
+  const groups = groupStudents(list);
+  const container = $('#groupsContainer');
+
+  if (!groups.length) {
+    container.innerHTML = `
+      <div class="card p-10 text-center">
+        <div class="w-16 h-16 mx-auto rounded-3xl bg-slate-100 text-slate-400 grid place-items-center text-3xl mb-4">📭</div>
+        <p class="font-black text-slate-900 text-lg">مفيش طلاب</p>
+        <p class="text-sm text-slate-500 font-semibold mt-1.5">ارفع ملف Excel الأول أو غيّر الفلتر.</p>
+      </div>`;
+    return;
+  }
+
+  container.innerHTML = groups.map((g, gi) => {
+    const stageCls = /ثانوي/.test(g.stage) ? 'bg-ita-redLight text-ita-red'
+                    : /إعدادي/.test(g.stage) ? 'bg-ita-greenLight text-ita-green'
+                    : 'bg-slate-100 text-slate-600';
+    return `
+      <div class="card overflow-hidden anim-fade" style="animation-delay:${gi*40}ms">
+        <div class="px-5 py-4 border-b border-slate-100 bg-slate-50/60 flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-2xl bg-blue-50 text-blue-600 grid place-items-center text-xl">🕐</div>
+            <div>
+              <p class="font-black text-slate-900">${escapeHtml(g.time)}</p>
+              <p class="text-[11px] text-slate-500 font-bold">${g.students.length} طالب</p>
+            </div>
+          </div>
+          <span class="rounded-full px-3 py-1 text-[11px] font-black ${stageCls}">🎓 ${escapeHtml(g.stage)}</span>
+        </div>
+        <div class="p-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          ${g.students.map(s => {
+            const sess = state.sessions.filter(x => x.studentId === s.id);
+            const paid = sess.reduce((a,x)=>a+(Number(x.sheet??x.amount)||0),0);
+            const present = sess.filter(x=>x.attendance==='present').length;
+            const exCount = state.exams.filter(x => x.studentId === s.id).length;
+            return `
+              <button data-show-student="${s.id}" class="text-right rounded-2xl border-2 border-slate-100 bg-white hover:border-blue-300 hover:bg-blue-50/40 p-4 transition group">
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 rounded-2xl bg-ita-green text-white grid place-items-center font-black text-sm shrink-0">${escapeHtml(initials(s.name))}</div>
+                  <div class="min-w-0 flex-1">
+                    <p class="font-black text-slate-900 text-sm truncate">${escapeHtml(s.name)}</p>
+                    <p class="text-[11px] text-slate-500 font-bold font-mono">${escapeHtml(s.code||'—')}</p>
+                  </div>
+                </div>
+                <div class="mt-3 flex flex-wrap gap-1.5">
+                  <span class="rounded-full px-2 py-0.5 text-[10px] font-black bg-slate-100 text-slate-600">${sess.length} حصة</span>
+                  <span class="rounded-full px-2 py-0.5 text-[10px] font-black bg-ita-greenLight text-ita-green">✅ ${present}</span>
+                  <span class="rounded-full px-2 py-0.5 text-[10px] font-black bg-teal-50 text-teal-700">🏆 ${exCount}</span>
+                </div>
+              </button>`;
+          }).join('')}
+        </div>
+      </div>`;
+  }).join('');
+}
+
+$('#studentsSearch')?.addEventListener('input', renderGroups);
+$('#studentsStageFilter')?.addEventListener('change', renderGroups);
+
+document.addEventListener('click', e => {
+  const btn = e.target.closest('[data-show-student]');
+  if (!btn) return;
+  const s = state.students.find(x => x.id === btn.dataset.showStudent);
+  if (!s) return;
+  showStudentModal(s);
+});
+
+function showStudentModal(s) {
+  const sess = state.sessions.filter(x => x.studentId === s.id)
+    .sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
+  const paid = sess.reduce((a,x)=>a+(Number(x.sheet??x.amount)||0),0);
+  const present = sess.filter(x=>x.attendance==='present').length;
+  const absent = sess.length - present;
+  const hwNotDone = sess.filter(x=>x.homework==='not_done').length;
+  const beh = state.behavior.filter(x => x.studentId === s.id);
+  const exms = state.exams.filter(x => x.studentId === s.id)
+    .sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
+
+  const avgPct = exms.length
+    ? Math.round(exms.reduce((a,x)=>a+(Number(x.percentage)||0),0) / exms.length * 10) / 10
+    : 0;
+
+  const host = $('#modalHost');
+  host.classList.remove('hidden');
+  host.innerHTML = `
+    <div class="min-h-full flex items-start sm:items-center justify-center py-6">
+      <div class="bg-white rounded-3xl w-full max-w-2xl shadow-2xl anim-pop overflow-hidden">
+        <div class="bg-gradient-to-l from-ita-green to-ita-greenDark p-5 text-white relative">
+          <button id="stClose" class="absolute top-4 left-4 w-9 h-9 rounded-xl bg-white/20 hover:bg-white/30 text-white grid place-items-center transition">✕</button>
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-3xl bg-white/20 backdrop-blur grid place-items-center font-black text-2xl ring-2 ring-white/30">${escapeHtml(initials(s.name))}</div>
+            <div class="min-w-0">
+              <p class="text-[11px] font-black text-white/80 uppercase tracking-wide">بيانات الطالب</p>
+              <h3 class="text-xl font-black truncate">${escapeHtml(s.name)}</h3>
+              <p class="text-[12px] font-bold text-white/90 font-mono">${escapeHtml(s.code||'—')}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 max-h-[70vh] overflow-y-auto">
+          <div class="grid grid-cols-2 gap-3 mb-4">
+            <div class="rounded-2xl bg-slate-50 border border-slate-100 p-3">
+              <p class="text-[10px] font-black text-slate-400 uppercase">🕐 اليوم والساعة</p>
+              <p class="font-black text-slate-900 text-sm mt-1">${escapeHtml(s.time||'—')}</p>
+            </div>
+            <div class="rounded-2xl bg-slate-50 border border-slate-100 p-3">
+              <p class="text-[10px] font-black text-slate-400 uppercase">🎓 المرحلة</p>
+              <p class="font-black text-slate-900 text-sm mt-1">${escapeHtml(s.stage||'—')}</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
+            <div class="rounded-2xl bg-slate-50 border border-slate-100 p-3 text-center">
+              <p class="text-[10px] font-black text-slate-400 uppercase">الحصص</p>
+              <p class="text-xl font-black text-slate-900 mt-0.5">${sess.length}</p>
+            </div>
+            <div class="rounded-2xl bg-ita-greenLight border border-ita-green/10 p-3 text-center">
+              <p class="text-[10px] font-black text-ita-green uppercase">حضر</p>
+              <p class="text-xl font-black text-ita-green mt-0.5">${present}</p>
+            </div>
+            <div class="rounded-2xl bg-ita-redLight border border-ita-red/10 p-3 text-center">
+              <p class="text-[10px] font-black text-ita-red uppercase">غاب</p>
+              <p class="text-xl font-black text-ita-red mt-0.5">${absent}</p>
+            </div>
+            <div class="rounded-2xl bg-amber-50 border border-amber-100 p-3 text-center">
+              <p class="text-[10px] font-black text-amber-600 uppercase">دفع</p>
+              <p class="text-xl font-black text-amber-700 mt-0.5">${paid}</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3 mb-4">
+            <div class="rounded-2xl bg-rose-50 border border-rose-100 p-3">
+              <p class="text-[10px] font-black text-rose-600 uppercase">📕 واجب ما اتعملش</p>
+              <p class="font-black text-rose-700 text-lg mt-0.5">${hwNotDone} مرة</p>
+            </div>
+            <div class="rounded-2xl bg-purple-50 border border-purple-100 p-3">
+              <p class="text-[10px] font-black text-purple-600 uppercase">🎭 سلوكيات</p>
+              <p class="font-black text-purple-700 text-lg mt-0.5">${beh.length}</p>
+            </div>
+            <div class="rounded-2xl bg-teal-50 border border-teal-100 p-3">
+              <p class="text-[10px] font-black text-teal-600 uppercase">🏆 امتحانات</p>
+              <p class="font-black text-teal-700 text-lg mt-0.5">${exms.length}</p>
+            </div>
+          </div>
+
+          ${exms.length ? `
+            <div class="rounded-2xl bg-gradient-to-l from-teal-50 to-white border border-teal-100 p-3 mb-4 flex items-center justify-between">
+              <div>
+                <p class="text-[10px] font-black text-teal-600 uppercase">📈 متوسط النسبة</p>
+                <p class="font-black text-teal-700 text-xl mt-0.5">${avgPct}%</p>
+              </div>
+              <span class="text-3xl">🏆</span>
+            </div>
+          ` : ''}
+
+          <h4 class="font-black text-slate-900 mb-2 text-sm">📚 آخر 10 حصص</h4>
+          <div class="rounded-2xl border border-slate-100 overflow-hidden mb-4">
+            <div class="overflow-x-auto max-h-64">
+              <table class="w-full text-xs">
+                <thead class="sticky top-0">
+                  <tr>
+                    <th class="th !py-2">التاريخ</th>
+                    <th class="th !py-2">⏰ الوقت</th>
+                    <th class="th !py-2">الحضور</th>
+                    <th class="th !py-2">الواجب</th>
+                    <th class="th !py-2">الشيت</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${sess.slice(0,10).map(x => `
+                    <tr class="hover:bg-slate-50">
+                      <td class="td !py-2 font-bold">${formatDate(x.date)}</td>
+                      <td class="td !py-2 font-mono text-blue-600">${escapeHtml(x.time||'—')}</td>
+                      <td class="td !py-2">
+                        ${x.attendance === 'present'
+                          ? `<span class="rounded-full px-2 py-0.5 text-[10px] font-black bg-ita-greenLight text-ita-green">✅ حضر</span>`
+                          : `<span class="rounded-full px-2 py-0.5 text-[10px] font-black bg-ita-redLight text-ita-red">❌ غاب</span>`}
+                      </td>
+                      <td class="td !py-2">
+                        ${x.homework === 'done'
+                          ? `<span class="rounded-full px-2 py-0.5 text-[10px] font-black bg-ita-greenLight text-ita-green">📗</span>`
+                          : x.homework === 'not_done'
+                            ? `<span class="rounded-full px-2 py-0.5 text-[10px] font-black bg-rose-100 text-rose-700" title="${escapeHtml(x.homeworkReason||'')}">📕 ${escapeHtml((x.homeworkReason||'').slice(0,14))}</span>`
+                            : `<span class="text-slate-400 text-[10px]">—</span>`}
+                      </td>
+                      <td class="td !py-2 font-black ${Number(x.sheet||x.amount)>0?'text-ita-green':'text-slate-400'}">${Number(x.sheet||x.amount)>0?formatMoney(x.sheet||x.amount):'—'}</td>
+                    </tr>`).join('') || `<tr><td colspan="5" class="td text-center text-slate-400 py-6">لا توجد حصص</td></tr>`}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          ${exms.length ? `
+            <h4 class="font-black text-slate-900 mb-2 text-sm">🏆 آخر الامتحانات</h4>
+            <div class="rounded-2xl border border-slate-100 overflow-hidden mb-4">
+              <div class="overflow-x-auto max-h-64">
+                <table class="w-full text-xs">
+                  <thead class="sticky top-0">
+                    <tr>
+                      <th class="th !py-2">التاريخ</th>
+                      <th class="th !py-2">الدرجة</th>
+                      <th class="th !py-2">النسبة</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${exms.slice(0,10).map(x => {
+                      const pct = Number(x.percentage)||0;
+                      const color = pct >= 80 ? 'text-ita-green bg-ita-greenLight' : pct >= 50 ? 'text-amber-700 bg-amber-50' : 'text-ita-red bg-ita-redLight';
+                      return `
+                        <tr class="hover:bg-slate-50">
+                          <td class="td !py-2 font-bold">${formatDate(x.date)}</td>
+                          <td class="td !py-2 font-black text-slate-900">${fmtNum(x.score)} / ${fmtNum(x.total)}</td>
+                          <td class="td !py-2"><span class="rounded-full px-2 py-0.5 text-[10px] font-black ${color}">${pct}%</span></td>
+                        </tr>`;
+                    }).join('')}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          ` : ''}
+
+          ${beh.length ? `
+            <h4 class="font-black text-slate-900 mb-2 text-sm">🎭 آخر السلوكيات</h4>
+            <div class="flex flex-wrap gap-2">
+              ${beh.slice(0,10).map(b => `
+                <span class="rounded-full px-3 py-1 text-[11px] font-black bg-purple-50 text-purple-700 ring-1 ring-purple-200">
+                  ${escapeHtml(b.issueLabel||b.issue||'سلوك')} · ${formatDate(b.date)}
+                </span>`).join('')}
+            </div>
+          ` : ''}
+        </div>
+
+        <div class="p-4 border-t border-slate-100 bg-slate-50 flex gap-2">
+          <button id="stClose2" class="btn btn-white flex-1">إغلاق</button>
+        </div>
+      </div>
+    </div>`;
+
+  const close = () => { host.classList.add('hidden'); host.innerHTML=''; };
+  $('#stClose').onclick = close;
+  $('#stClose2').onclick = close;
+  host.onclick = e => { if (e.target === host) close(); };
+}
+
+/* ==========================================================
+   12) السلوك
+   ========================================================== */
+function renderBehaviorGroups() {
+  const term = ($('#behaviorSearch')?.value || '').trim().toLowerCase();
+  let list = state.students;
+  if (term) list = list.filter(s => String(s.name||'').toLowerCase().includes(term) || String(s.code||'').toLowerCase().includes(term));
+
+  const groups = groupStudents(list);
+  const container = $('#behaviorGroups');
+
+  if (!groups.length) {
+    container.innerHTML = `
+      <div class="card p-10 text-center">
+        <div class="w-16 h-16 mx-auto rounded-3xl bg-slate-100 text-slate-400 grid place-items-center text-3xl mb-4">📭</div>
+        <p class="font-black text-slate-900 text-lg">مفيش طلاب</p>
+        <p class="text-sm text-slate-500 font-semibold mt-1.5">ارفع ملف Excel الأول.</p>
+      </div>`;
+    return;
+  }
+
+  container.innerHTML = groups.map((g, gi) => `
+    <div class="card overflow-hidden anim-fade" style="animation-delay:${gi*40}ms">
+      <div class="px-5 py-4 border-b border-slate-100 bg-gradient-to-l from-purple-50 to-white flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-2xl bg-purple-600 text-white grid place-items-center text-xl shadow-lg shadow-purple-600/25">🎭</div>
+          <div>
+            <p class="font-black text-slate-900">${escapeHtml(g.time)}</p>
+            <p class="text-[11px] text-slate-500 font-bold">${escapeHtml(g.stage)} · ${g.students.length} طالب</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        ${g.students.map(s => {
+          const count = state.behavior.filter(x => x.studentId === s.id).length;
+          return `
+            <button data-mark-behavior="${s.id}" class="text-right rounded-2xl border-2 border-slate-100 bg-white hover:border-purple-300 hover:bg-purple-50/40 p-4 transition group">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-purple-600 text-white grid place-items-center font-black text-sm shrink-0">${escapeHtml(initials(s.name))}</div>
+                <div class="min-w-0 flex-1">
+                  <p class="font-black text-slate-900 text-sm truncate">${escapeHtml(s.name)}</p>
+                  <p class="text-[11px] text-slate-500 font-bold font-mono">${escapeHtml(s.code||'—')}</p>
+                </div>
+                ${count > 0 ? `<span class="rounded-full px-2 py-0.5 text-[10px] font-black bg-purple-100 text-purple-700 shrink-0">${count}</span>` : ''}
+              </div>
+              <div class="mt-3 flex items-center gap-1.5 text-purple-600 font-black text-[11px]">
+                <span>تسجيل سلوك</span>
+                <span class="group-hover:-translate-x-0.5 transition">←</span>
+              </div>
+            </button>`;
+        }).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+$('#behaviorSearch')?.addEventListener('input', renderBehaviorGroups);
+
+$('#behaviorTodayBtn')?.addEventListener('click', () => {
+  const today = todayISO();
+  const list = state.behavior.filter(b => b.date === today);
+  const host = $('#modalHost');
+  host.classList.remove('hidden');
+
+  if (!list.length) {
+    host.innerHTML = `
+      <div class="min-h-full flex items-center justify-center py-6">
+        <div class="bg-white rounded-3xl w-full max-w-md p-6 shadow-2xl anim-pop text-center">
+          <div class="w-16 h-16 mx-auto rounded-3xl bg-purple-50 text-purple-600 grid place-items-center text-3xl mb-4">🎭</div>
+          <p class="font-black text-slate-900 text-lg">مفيش سلوكيات مسجّلة النهاردة</p>
+          <p class="text-sm text-slate-500 font-semibold mt-1.5">لسه محدش سجّل أي سلوك النهاردة.</p>
+          <button id="btClose" class="btn btn-purple w-full mt-5">تمام</button>
+        </div>
+      </div>`;
+    $('#btClose').onclick = () => { host.classList.add('hidden'); host.innerHTML=''; };
+    host.onclick = e => { if (e.target === host) { host.classList.add('hidden'); host.innerHTML=''; } };
+    return;
+  }
+
+  host.innerHTML = `
+    <div class="min-h-full flex items-start sm:items-center justify-center py-6">
+      <div class="bg-white rounded-3xl w-full max-w-2xl p-6 shadow-2xl anim-pop overflow-hidden">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="font-black text-lg text-slate-900">🎭 سلوكيات النهاردة (${list.length})</h3>
+          <button id="btClose" class="w-9 h-9 rounded-xl hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition grid place-items-center">✕</button>
+        </div>
+        <div class="space-y-2 max-h-[65vh] overflow-y-auto">
+          ${list.map(b => `
+            <div class="rounded-2xl border border-purple-100 bg-purple-50/40 p-3 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-purple-600 text-white grid place-items-center font-black text-xs shrink-0">${escapeHtml(initials(b.studentName||''))}</div>
+              <div class="min-w-0 flex-1">
+                <p class="font-black text-slate-900 text-sm truncate">${escapeHtml(b.studentName||'—')}</p>
+                <p class="text-[11px] font-bold text-purple-700">${escapeHtml(b.issueLabel||b.issue||'')}</p>
+              </div>
+              <span class="text-[10px] font-black text-slate-500 font-mono shrink-0">${escapeHtml(b.time||'')}</span>
+            </div>
+          `).join('')}
+        </div>
+        <button id="btClose2" class="btn btn-white w-full mt-4">إغلاق</button>
+      </div>
+    </div>`;
+
+  const close = () => { host.classList.add('hidden'); host.innerHTML=''; };
+  $('#btClose').onclick = close;
+  $('#btClose2').onclick = close;
+  host.onclick = e => { if (e.target === host) close(); };
+});
+
+document.addEventListener('click', e => {
+  const btn = e.target.closest('[data-mark-behavior]');
+  if (!btn) return;
+  const s = state.students.find(x => x.id === btn.dataset.markBehavior);
+  if (!s) return;
+  showBehaviorModal(s);
+});
+
+function showBehaviorModal(s) {
+  const host = $('#modalHost');
+  host.classList.remove('hidden');
+  host.innerHTML = `
+    <div class="min-h-full flex items-start sm:items-center justify-center py-6">
+      <div class="bg-white rounded-3xl w-full max-w-2xl shadow-2xl anim-pop overflow-hidden">
+        <div class="bg-gradient-to-l from-purple-600 to-purple-800 p-5 text-white relative">
+          <button id="behClose" class="absolute top-4 left-4 w-9 h-9 rounded-xl bg-white/20 hover:bg-white/30 text-white grid place-items-center transition">✕</button>
+          <div class="flex items-center gap-4">
+            <div class="w-14 h-14 rounded-3xl bg-white/20 backdrop-blur grid place-items-center font-black text-xl ring-2 ring-white/30">${escapeHtml(initials(s.name))}</div>
+            <div class="min-w-0">
+              <p class="text-[11px] font-black text-white/80 uppercase tracking-wide">تسجيل سلوك</p>
+              <h3 class="text-lg font-black truncate">${escapeHtml(s.name)}</h3>
+              <p class="text-[11px] font-bold text-white/90 font-mono">${escapeHtml(s.code||'—')} · ${escapeHtml(s.stage||'')}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 max-h-[70vh] overflow-y-auto">
+          <p class="font-black text-slate-900 mb-3 text-sm">🎯 اختر السلوك اللي حصل:</p>
+          <div class="grid sm:grid-cols-2 gap-2">
+            ${BEHAVIOR_ISSUES.map(b => `
+              <button data-beh-key="${b.key}" data-beh-label="${escapeHtml(b.label)}"
+                class="beh-opt text-right rounded-2xl border-2 border-slate-100 bg-white hover:border-purple-300 hover:bg-purple-50/40 p-3 transition flex items-center gap-3">
+                <span class="text-2xl shrink-0">${b.icon}</span>
+                <span class="font-black text-slate-800 text-sm flex-1">${escapeHtml(b.label)}</span>
+                <span class="text-purple-600 font-black">←</span>
+              </button>
+            `).join('')}
+          </div>
+
+          <div class="mt-5">
+            <label class="label" for="behNotes">📝 ملاحظات (اختياري)</label>
+            <input id="behNotes" class="input" placeholder="أي تفاصيل إضافية...">
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+  const close = () => { host.classList.add('hidden'); host.innerHTML=''; };
+  $('#behClose').onclick = close;
+  host.onclick = e => { if (e.target === host) close(); };
+
+  $$('.beh-opt').forEach(b => b.addEventListener('click', async () => {
+    const issueKey = b.dataset.behKey;
+    const issueLabel = b.dataset.behLabel;
+    const notes = $('#behNotes').value.trim();
+
+    if (!db) return toast('لم يتم ضبط Firebase','error');
+
+    b.disabled = true;
+    const orig = b.innerHTML;
+    b.innerHTML = `<span class="text-sm font-black text-purple-700">⏳ جارٍ الحفظ...</span>`;
+
+    const timeStr = nowTime();
+    const payload = {
+      studentId:    s.id,
+      studentName:  s.name || '',
+      studentCode:  normalizeCode(s.code || ''),
+      studentStage: s.stage || '',
+      studentTime:  s.time || '',
+      issue:        issueKey,
+      issueLabel:   issueLabel,
+      notes:        notes,
+      date:         todayISO(),
+      time:         timeStr,
+      createdAt:    serverTimestamp()
+    };
+
+    try {
+      await addDoc(collection(db,'behavior'), payload);
+      toast(`تم تسجيل: ${issueLabel} · ${timeStr} ✅`,'success');
+      close();
+      if (state.currentView === 'viewBehavior') renderBehaviorGroups();
+    } catch (err) {
+      console.error(err);
+      toast('فشل الحفظ: '+err.message,'error');
+      b.disabled = false;
+      b.innerHTML = orig;
+    }
+  }));
+}
+
+/* ==========================================================
+   13) كل الحصص
+   ========================================================== */
+function renderRecords() {
+  const term = ($('#recordsSearch')?.value || '').trim().toLowerCase();
+  const m = $('#recordsMonthFilter')?.value || '';
+
+  let list = state.sessions.slice();
+  if (term) list = list.filter(s => String(s.studentName||'').toLowerCase().includes(term));
+  if (m) list = list.filter(s => String(s.date||'').startsWith(m));
+
+  const present = list.filter(s=>s.attendance==='present').length;
+  const money = list.reduce((a,s)=>a+(Number(s.sheet||s.amount)||0),0);
+  const hwNot = list.filter(s=>s.homework==='not_done').length;
+
+  $('#recordsSummary').textContent =
+    `${list.length} حصة · ${present} حضور · ${list.length-present} غياب · واجب ما اتعملش ${hwNot} · إجمالي ${formatMoney(money)}`;
+
+  const body = $('#recordsBody');
+  if (!list.length) {
+    body.innerHTML = `<tr><td colspan="6" class="td text-center text-slate-400 py-10">لا توجد حصص مسجّلة 📊</td></tr>`;
+    return;
+  }
+
+  body.innerHTML = list.slice(0,200).map(s => {
+    const amt = Number(s.sheet||s.amount)||0;
+    return `
+      <tr class="hover:bg-slate-50/70 transition">
+        <td class="td font-bold">${formatDate(s.date)}</td>
+        <td class="td font-mono text-blue-600 text-xs">${escapeHtml(s.time||'—')}</td>
+        <td class="td font-bold text-slate-900">${escapeHtml(s.studentName||'—')}</td>
+        <td class="td">
+          ${s.attendance === 'present'
+            ? `<span class="rounded-full px-2.5 py-1 text-[11px] font-black bg-ita-greenLight text-ita-green">✅ حضر</span>`
+            : `<span class="rounded-full px-2.5 py-1 text-[11px] font-black bg-ita-redLight text-ita-red">❌ غاب</span>`}
+        </td>
+        <td class="td">
+          ${s.homework === 'done'
+            ? `<span class="rounded-full px-2.5 py-1 text-[11px] font-black bg-ita-greenLight text-ita-green">📗 عمل</span>`
+            : s.homework === 'not_done'
+              ? `<span class="rounded-full px-2.5 py-1 text-[11px] font-black bg-rose-100 text-rose-700" title="${escapeHtml(s.homeworkReason||'')}">📕 ${escapeHtml((s.homeworkReason||'').slice(0,16))}</span>`
+              : `<span class="text-slate-400 text-[11px]">—</span>`}
+        </td>
+        <td class="td font-black ${amt>0?'text-ita-green':'text-slate-400'}">${amt>0?formatMoney(amt):'لم يدفع'}</td>
+      </tr>`;
+  }).join('');
+}
+
+$('#recordsSearch')?.addEventListener('input', renderRecords);
+$('#recordsMonthFilter')?.addEventListener('change', renderRecords);
+
+function buildRecordsMonthFilter() {
+  const sel = $('#recordsMonthFilter');
+  if (!sel) return;
+  const months = [...new Set(state.sessions.map(s => String(s.date||'').slice(0,7)).filter(Boolean))]
+    .sort((a,b)=>b.localeCompare(a));
+  sel.innerHTML = '<option value="">كل الشهور</option>' +
+    months.map(m => `<option value="${m}">${m}</option>`).join('');
+}
+
+/* ==========================================================
+   14) كل الامتحانات
+   ========================================================== */
+function renderExamsList() {
+  const term = ($('#examsSearch')?.value || '').trim().toLowerCase();
+  const m = $('#examsMonthFilter')?.value || '';
+
+  let list = state.exams.slice();
+  if (term) list = list.filter(s => String(s.studentName||'').toLowerCase().includes(term));
+  if (m) list = list.filter(s => String(s.date||'').startsWith(m));
+
+  const avg = list.length
+    ? Math.round(list.reduce((a,x)=>a+(Number(x.percentage)||0),0) / list.length * 10) / 10
+    : 0;
+
+  $('#examsSummary').textContent = `${list.length} امتحان · متوسط النسبة ${avg}%`;
+
+  const body = $('#examsBody');
+  if (!list.length) {
+    body.innerHTML = `<tr><td colspan="6" class="td text-center text-slate-400 py-10">لا توجد امتحانات مسجّلة 🏆</td></tr>`;
+    return;
+  }
+
+  body.innerHTML = list.slice(0,200).map(x => {
+    const pct = Number(x.percentage)||0;
+    const color = pct >= 80 ? 'bg-ita-greenLight text-ita-green' : pct >= 50 ? 'bg-amber-50 text-amber-700' : 'bg-ita-redLight text-ita-red';
+    return `
+      <tr class="hover:bg-slate-50/70 transition">
+        <td class="td font-bold">${formatDate(x.date)}</td>
+        <td class="td font-mono text-blue-600 text-xs">${escapeHtml(x.time||'—')}</td>
+        <td class="td font-bold text-slate-900">${escapeHtml(x.studentName||'—')}</td>
+        <td class="td text-slate-600 text-xs">${escapeHtml(x.group||x.studentTime||'—')}</td>
+        <td class="td font-black text-slate-900">${fmtNum(x.score)} / ${fmtNum(x.total)}</td>
+        <td class="td"><span class="rounded-full px-2.5 py-1 text-[11px] font-black ${color}">${pct}%</span></td>
+      </tr>`;
+  }).join('');
+}
+
+$('#examsSearch')?.addEventListener('input', renderExamsList);
+$('#examsMonthFilter')?.addEventListener('change', renderExamsList);
+
+function buildExamsMonthFilter() {
+  const sel = $('#examsMonthFilter');
+  if (!sel) return;
+  const months = [...new Set(state.exams.map(s => String(s.date||'').slice(0,7)).filter(Boolean))]
+    .sort((a,b)=>b.localeCompare(a));
+  sel.innerHTML = '<option value="">كل الشهور</option>' +
+    months.map(m => `<option value="${m}">${m}</option>`).join('');
+}
+
+/* ==========================================================
+   15) حذف البيانات
    ========================================================== */
 async function deleteCollectionDocs(name) {
   if (!db) throw new Error('لم يتم ضبط Firebase');
@@ -1127,7 +2259,7 @@ document.addEventListener('click', async e => {
   const type = b.dataset.del;
 
   if (type === 'students') {
-    const ok = await confirmDialog('حذف جميع الطلاب', `سيتم حذف ${state.students.length} طالب نهائيًا. الحصص المسجلة لن تُحذف.`, 'احذف الطلاب');
+    const ok = await confirmDialog('حذف جميع الطلاب', `سيتم حذف ${state.students.length} طالب نهائيًا.`, 'احذف الطلاب');
     if (!ok) return;
     b.disabled = true; b.textContent = '⏳...';
     try { const n = await deleteCollectionDocs('students'); toast(`تم حذف ${n} طالب`, 'success'); }
@@ -1146,6 +2278,26 @@ document.addEventListener('click', async e => {
     return;
   }
 
+  if (type === 'behavior') {
+    const ok = await confirmDialog('حذف جميع السلوكيات', `سيتم حذف ${state.behavior.length} سلوك نهائيًا.`, 'احذف السلوكيات');
+    if (!ok) return;
+    b.disabled = true; b.textContent = '⏳...';
+    try { const n = await deleteCollectionDocs('behavior'); toast(`تم حذف ${n} سلوك`, 'success'); }
+    catch (err) { toast('فشل الحذف: '+err.message, 'error'); }
+    finally { b.disabled = false; b.textContent = 'حذف السلوكيات'; updateDeleteStats(); }
+    return;
+  }
+
+  if (type === 'exams') {
+    const ok = await confirmDialog('حذف جميع الامتحانات', `سيتم حذف ${state.exams.length} امتحان نهائيًا.`, 'احذف الامتحانات');
+    if (!ok) return;
+    b.disabled = true; b.textContent = '⏳...';
+    try { const n = await deleteCollectionDocs('exams'); toast(`تم حذف ${n} امتحان`, 'success'); }
+    catch (err) { toast('فشل الحذف: '+err.message, 'error'); }
+    finally { b.disabled = false; b.textContent = 'حذف الامتحانات'; updateDeleteStats(); }
+    return;
+  }
+
   if (type === 'month') {
     const m = $('#delMonth').value;
     if (!m) return toast('اختر الشهر أولاً', 'warn');
@@ -1159,20 +2311,22 @@ document.addEventListener('click', async e => {
   }
 
   if (type === 'all') {
-    const ok = await confirmDialog('حذف كل شيء', `سيتم حذف ${state.students.length} طالب و ${state.sessions.length} حصة نهائيًا. لا يمكن الرجوع!`, 'احذف الكل');
+    const ok = await confirmDialog('حذف كل شيء', `سيتم حذف ${state.students.length} طالب و ${state.sessions.length} حصة و ${state.behavior.length} سلوك و ${state.exams.length} امتحان نهائيًا!`, 'احذف الكل');
     if (!ok) return;
     b.disabled = true; b.textContent = '⏳...';
     try {
       const s1 = await deleteCollectionDocs('students');
       const s2 = await deleteCollectionDocs('sessions');
-      toast(`تم حذف ${s1} طالب و ${s2} حصة`, 'success');
+      const s3 = await deleteCollectionDocs('behavior');
+      const s4 = await deleteCollectionDocs('exams');
+      toast(`تم حذف ${s1} طالب و ${s2} حصة و ${s3} سلوك و ${s4} امتحان`, 'success');
     } catch (err) { toast('فشل الحذف: '+err.message, 'error'); }
     finally { b.disabled = false; b.textContent = 'حذف الكل'; updateDeleteStats(); }
   }
 });
 
 /* ==========================================================
-   10) PWA
+   16) PWA
    ========================================================== */
 let deferredPrompt = null;
 window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; });
@@ -1196,13 +2350,27 @@ if ('serviceWorker' in navigator) {
 }
 
 /* ==========================================================
-   11) التشغيل
+   17) التشغيل
    ========================================================== */
 $('#year').textContent = new Date().getFullYear();
 resetSessionForm();
+resetExamForm();
 updateCounts();
 setConn(false);
 startListeners();
+
+setTimeout(() => { buildRecordsMonthFilter(); buildExamsMonthFilter(); }, 1500);
+let lastSessionsLen = 0, lastExamsLen = 0;
+setInterval(() => {
+  if (state.sessions.length !== lastSessionsLen) {
+    lastSessionsLen = state.sessions.length;
+    buildRecordsMonthFilter();
+  }
+  if (state.exams.length !== lastExamsLen) {
+    lastExamsLen = state.exams.length;
+    buildExamsMonthFilter();
+  }
+}, 2500);
 </script>
 </body>
 </html>
